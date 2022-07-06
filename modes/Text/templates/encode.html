@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Encode {% endblock %}
+
+
+{% block content %}
+<style>
+    #b2{background-color:green;}
+</style>
+
+  <div id="home" >
+       <form class="form-horizontal" action="/text/encode-result" method="post" enctype="multipart/form-data" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left:5%;">
+          <h3><u>Embed Your Secret Message into an Image</u></h3><br><br>
+            <div class="row" >
+               <div class="col" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin-left:5%;">
+                      <div class="form-group" >
+                       <label class="control-label col-sm-6" for="img">Upload  file :</label><br>
+                      <div class="col-lg-10">
+                 <input type="file"   class="form-control" required placeholder="upload Image.. "  name="image" id="img"/>
+                      </div><br><br>
+              <button class="btn-primary predict" type="button" style="width:130px;height:50px; margin-left:-30px;padding:0px 10px;" onclick="show()">View</button>
+                      </div>
+                   </div>
+
+                <div class="col">
+                    <img src="" id="target" width="200" height="150"><br>
+                    <input type="text" id="text" value="" readonly>
+               </div>
+
+                <div class="col" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin-right:5%;" >
+                    <div class="form-group" >
+                       <label class="control-label col-sm-6" for="msg">Enter Message :</label><br>
+                      <div class="col-lg-10">
+                 <input type="text"   class="form-control" required placeholder="Enter Your Secret Message.. "  name="message" id="msg"/>
+                      </div><br><br>
+               <button class="btn-primary predict" type="button" style="width:130px;height:50px; margin-left:-30px;padding:0px 10px;" onclick="showText()">View</button>
+                      </div>
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+        <div class="form-group">
+             <div class="col-sm-offset-3 col-sm-8">
+            <button style="width:140px;height:50px;margin-top:70px;" type="submit" class="btn-success predict">Encode</button>
+            </div>
+            </div>
+                </div>
+            </div>
+         </form><br>
+
+
+  </div>
+{% endblock %}

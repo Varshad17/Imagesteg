@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} Decode {% endblock %}
+
+
+{% block content %}
+<style>
+    #b5{background-color:green;}
+</style>
+
+  <div id="home" >
+      <h3 style="margin-left:50px;"><u>Decode Your Secret Image</u></h3>
+       <form class="form-horizontal" action="/text/decode-result" method="post"  enctype="multipart/form-data" style="height:65vh;padding-top:5%;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left:5%;">
+            <div class="row">
+               <div class="col">
+                      <div class="form-group" >
+                       <label class="control-label col-sm-6" for="img">Upload  file :</label><br>
+                      <div class="col-lg-4">
+                 <input type="file"   class="form-control" required placeholder="upload Image.. "  name="image" id="img"/>
+                          <br>
+                      </div>
+                      </div>
+               </div>
+                </div>
+                   <div class="row">
+                   <div class="col">
+                      <div class="form-group" >
+                       <label class="control-label col-sm-4" for="txt">Digital Signature :</label><br>
+                      <div class="col-lg-4">
+                 <input type="text"   class="form-control" required placeholder="Enter your digital signature "  name="message" id="txt"/>
+                          <br>
+                      </div>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="row">
+                   <div class="col">
+                      <div class="form-group" >
+                       <label class="control-label col-sm-4" for="txt">Enter your key :</label><br>
+                      <div class="col-lg-4">
+                 <input type="text"   class="form-control" required placeholder="Enter key here.. "  name="key" id="key"/>
+                          <br>
+                      </div>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+        <div class="form-group">
+             <div class="col-sm-offset-3 col-sm-8">
+<!--                 <button class="btn-primary predict" type="button" style="width:100px;height:50px; margin-left:-100px;padding:0px 10px;" onclick="show()">Show</button>-->
+            <button style="width:100px;height:50px;margin-right:100px;" type="submit" class="btn-success predict">Decode</button>
+            </div>
+            </div>
+                     <img src="" id="target" width="200" height="150"><br>
+                </div>
+            </div>
+         </form><br>
+
+  </div>
+{% endblock %}

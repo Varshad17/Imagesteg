@@ -1,0 +1,37 @@
+import hashlib
+
+
+h = hashlib.sha256() # Construct a hash object using our selected hashing algorithm
+h.update('My content'.encode('utf-8')) # Update the hash using a bytes object
+print(h.hexdigest()) # Print the hash value as a hex string
+print(h.digest()) # Print the hash value as a bytes object
+
+
+file = "myfile.txt" # Location of the file (can be set a different way)
+BLOCK_SIZE = 65536 # The size of each read from the file
+
+file_hash = hashlib.sha256() # Create the hash object, can use something other than `.sha256()` if you wish
+with open(file, 'rb') as f: # Open the file to read it's bytes
+    fb = f.read(BLOCK_SIZE) # Read from the file. Take in the amount declared above
+    while len(fb) > 0: # While there is still data being read from the file
+        file_hash.update(fb) # Update the hash
+        fb = f.read(BLOCK_SIZE) # Read the next block from the file
+
+print (file_hash.hexdigest()) # Get the hexadecimal digest of the hash
+
+
+
+
+
+
+        if file.filename == '':
+            flash('No image selected')
+        if file:
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(current_app.config['UPLOAD_TEXT_FOLDER'], filename))
+            text_decryption = True
+            message = decrypt_text(os.path.join(current_app.config['UPLOAD_TEXT_FOLDER'], filename))
+        else:
+            text_decryption = False
+        result = request.form
+        return render_template("decode-text-result.html", result=result, file=file, text_decryption=text_decryption, message=message)
