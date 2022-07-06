@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title%} {% endblock %}</title>
+  <meta charset="utf-8">
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+   <link href="/static/css/steganography.css" rel="stylesheet">
+
+    <style>
+
+.predict{
+font-size:25px;
+border-radius:15px;
+padding:5px;
+}
+.predict:hover{background-color:gold;}
+
+label{color:red;}
+
+.result{
+     width:40%;
+     height:70px;
+     background-color:green;
+     color:white;
+     text-align:center;
+     box-shadow:2px 2px black;
+     padding-top:10px;
+}
+#target, #text {display:none}
+
+
+#logout{background-color:red;}
+    </style>
+</head>
+<body>
+
+                    <div class="container-fluid">
+                    <h1 class="tuber head bg-dark">STEGANOGRAPHY</h1>
+                        </div>
+
+                    <div class=" tuber menu ">
+    <a  href="/home"><button type="button" onclick="home()" id="b1" class="btn"  >Home</button></a>
+   <a  href="/text/encode"><button type="button" id="b2"  class="btn" >Encode</button></a>
+         <a  href="/about"><button type="button" id="b3" class="btn" >Encrypt</button></a>
+    <a  href="/contact"><button type="button" id="b4" class="btn">Decrypt</button></a>
+      <a  href="/text/decode"><button type="button" id="b5"  class="btn">Decode</button></a>
+    <a  href="/password"> <button type="button" id="b6"  class="btn">Change Password</button></a>
+      <a  href="/logout"> <button type="button"  id="logout" class="btn">Logout</button></a>
+</div>
+
+
+ <br><br> <br><br>
+           <center>
+    <div class="content">
+
+                                      <!--     HOME      -->
+
+
+         {% block content %} {% endblock %}
+
+
+           </div>
+
+           </center>
+
+<script src="/static/js/jscript.js"> </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
