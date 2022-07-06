@@ -59,7 +59,7 @@
 ## Getting Started
 #### Clone the Repo
 ```
-git clone https://github.com/ADI-KOTKAR/Stega.git
+git clone https://github.com/Varshad17/Stega.git
 ````
 
 ####  Python 3 
